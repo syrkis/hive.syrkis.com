@@ -8,34 +8,84 @@ import { Tweet, Vimeo, YouTube } from "astro-embed";
 # Harnessing Language for Coordination: A Framework and Benchmark for LLM-Driven Multi-Agent Control
 
 <div class="authors">
-  <p>Timothée Anne, [Noah Syrkis](https://syrkis.com), Meriem Elhosni, [Sebastian Risi](https://sebastianrisi.com/)</p>
+  <p>
+    Timothée Anne, [Noah Syrkis](https://syrkis.com), Meriem Elhosni, Florian Turati, Franck Legendre, Alain Jaquier,
+    [Sebastian Risi](https://sebastianrisi.com/)
+  </p>
 </div>
 
-<iframe src="https://www.youtube.com/embed/P40IfAW1e2s" allow="autoplay"></iframe>
+<iframe src="https://www.youtube.com/embed/6MUoHyp9Ty0" allow="autoplay"></iframe>
 
 ## Abstract
 
-Large Language Models (LLMs) have demonstrated remarkable performance across a wide range of tasks. A promising but largely underexplored area is their potential to facilitate human coordination with large numbers of agents. Such capabilities would be very useful in domains including disaster response, urban planning, and real-time strategy scenarios. In this work, we introduce a real-time strategy game benchmark designed to evaluate these abilities, alongside a novel framework we term HIVE. HIVE empowers a single human to coordinate swarms of up to 1,500 agents using natural language dialog with an LLM. We present promising results on this multi-agent benchmark, with the hybrid approach excelling in tasks such as coordinating agent movements, exploiting unit weaknesses, leveraging human annotations, and understanding terrain and infrastructure. However, our findings also highlight critical limitations of current models, including difficulties in processing visual information and challenges in formulating long-term strategic plans. This work sheds light on the potential and limitations of LLMs in human-swarm coordination, paving the way for future research in this exciting area.
+Large Language Models (LLMs) have demonstrated remarkable performance across various tasks. A promising but largely under-explored area is their potential to facilitate human coordination with many agents. Such capabilities would be useful in domains including disaster response, urban planning, and real-time strategy scenarios. In this work, we introduce (1) a real-time strategy game benchmark designed to evaluate these abilities and (2) a novel framework we term HIVE. HIVE empowers a single human to coordinate swarms of up to 2,000 agents using natural language dialog with an LLM. We present promising results on this multi-agent benchmark, with our hybrid approach solving tasks such as coordinating agent movements, exploiting unit weaknesses, leveraging human annotations, and understanding terrain and strategic points. However, our findings also highlight critical limitations of current models, including difficulties in processing spatial visual information and challenges in formulating long-term strategic plans. This work sheds light on the potential and limitations of LLMs in human-swarm coordination, paving the way for future research in this area.
 
-![](/method_overview.svg)
+![test](/figs/teaser_figure.png)
 
 ## Introduction
 
-Artificial intelligence (AI) is increasingly being employed across a diverse range of domains, with recent explorations into its application in defense settings. As these systems acquire the capability to act in a growing number of areas—often without established quality guarantees—the risks associated with automation bias become more significant. Intuitively, technologies such as large language models (LLMs) and their multi-modal counterparts (MLLMs) can be positioned between observation and action in strategic war games in several ways, including:
+Large Language Models (LLMs) are revolutionizing how we interact with artificial intelligence, and one exciting frontier is their ability to coordinate multiple agents in complex scenarios. Enter HIVE (Hybrid Intelligence for Vast Engagements), a new framework that bridges human strategy and AI execution in real-time environments.
 
-_1) As end-to-end controllers._
+HIVE works by taking natural language instructions from humans and transforming them into detailed operational plans for controlling thousands of agents simultaneously. Think of it as a translator that converts your high-level strategic thoughts into tactical instructions that AI agents can understand and execute.
 
-_2) As subordinate to a human._
+To put HIVE through its paces, we created a comprehensive benchmark testing five essential capabilities: coordination, weakness exploitation, spatial awareness, terrain usage, and strategic planning. Our research not only demonstrates HIVE's potential for enhancing human decision-making but also reveals important insights about current LLM limitations, including their challenges with visual-spatial reasoning and long-term strategy.
 
-_3) Collaborating with a human._
+<iframe src="https://www.youtube.com/embed/5XZjfCakYeg" allow="autoplay"></iframe>
 
-Previous research has demonstrated that, to date, these systems do not perform adequately in the first role. Thus, human involvement remains essential in strategic domains, not only for ethical and legal reasons, but also performance reasons.
+## HIVE: Hybrid Intelligence for Vast Engagements
 
-In this paper, we present a framework capable of evaluating all three modes of AI function. As AI technology advances, we expect to see performance improvements across all three modes.
+![test](/figs/method_overview.png)
 
-## The HIVE Approach
+We present HIVE, a novel framework enabling natural language control of thousands of units in strategy games through human-AI collaboration. HIVE translates high-level human commands into detailed operational plans using Large Language Models (LLMs).
 
-## Results
+### Overview
+
+HIVE operates through three key components:
+
+1. A natural language interface allowing players to give commands and place markers
+2. An LLM that generates structured plans using a domain-specific language
+3. A behavior tree system that executes plans by controlling individual units
+
+### The Game Environment
+
+The game features:
+
+- Three unit types (spearmen, archers, cavalry) with rock-paper-scissors dynamics
+- Four terrain types affecting movement and visibility
+- Support for thousands of units with parallel processing in JAX
+- Local unit observations within a 15m range
+- Continuous movement and discrete attack actions
+
+### Benchmark Results
+
+We evaluated HIVE across five core capabilities:
+
+1. Coordinate (managing 1000+ units)
+2. Exploit weakness (utilizing unit type advantages)
+3. Follow markers (precise positioning)
+4. Exploit terrain (strategic navigation)
+5. Strategize points (defensive positioning)
+
+![Ability Tests](/figs/AbilityTests.png)
+
+### Key findings:
+
+![Ability evaluations](/figs/abilities_evaluation.svg)
+
+- Claude-3 Sonnet performed best overall, solving all ability tests
+- HIVE shows superior performance with human collaboration vs. AI alone
+- The system scales effectively up to 4000 units
+- LLMs still struggle with visual map interpretation compared to textual descriptions
+
+<iframe src="https://www.youtube.com/embed/wgDBJ2tqwqo" allow="autoplay"></iframe>
+
+## Conclusion
+
+Our exploration of HIVE demonstrates an exciting new direction for human-AI collaboration in strategic gameplay. By enabling LLMs like Claude Sonnet and GPT-4 to translate human commands into coordinated actions for thousands of units, we're pushing the boundaries of what's possible in AI-assisted strategy.
+
+While the results are promising, there's still room for improvement. The systems currently show sensitivity to prompt variations and have limitations in visual map interpretation. However, these challenges point to exciting opportunities for future development in areas like map comprehension, prompt consistency, and long-term strategic planning.
+
+As we continue to refine these systems, the potential applications extend far beyond gaming, potentially revolutionizing fields where coordinated decision-making is crucial.
 
 ## BibTeX
 
