@@ -36,7 +36,7 @@ To put HIVE through its paces, we created a comprehensive benchmark testing five
 
 ![test](/figs/method_overview.png)
 
-We present HIVE, a novel framework enabling natural language control of thousands of units in strategy games through human-AI collaboration. HIVE translates high-level human commands into detailed operational plans using Large Language Models (LLMs).
+We present HIVE—outlined in the image above—a novel framework enabling natural language control of thousands of units in strategy games through human-AI collaboration. HIVE translates high-level human commands into detailed operational plans using Large Language Models (LLMs).
 
 ### Overview
 
@@ -66,9 +66,13 @@ We evaluated HIVE across five core capabilities:
 4. Exploit terrain (strategic navigation)
 5. Strategize points (defensive positioning)
 
+The map used to test each can be seen in the image bellow.
+
 ![Ability Tests](/figs/AbilityTests.png)
 
 ### Key findings:
+
+Ability evaluation for each model is seen in the image below.
 
 ![Ability evaluations](/figs/abilities_evaluation.svg)
 
@@ -81,11 +85,7 @@ We evaluated HIVE across five core capabilities:
 
 ## Conclusion
 
-Our exploration of HIVE demonstrates an exciting new direction for human-AI collaboration in strategic gameplay. By enabling LLMs like Claude Sonnet and GPT-4 to translate human commands into coordinated actions for thousands of units, we're pushing the boundaries of what's possible in AI-assisted strategy.
-
-While the results are promising, there's still room for improvement. The systems currently show sensitivity to prompt variations and have limitations in visual map interpretation. However, these challenges point to exciting opportunities for future development in areas like map comprehension, prompt consistency, and long-term strategic planning.
-
-As we continue to refine these systems, the potential applications extend far beyond gaming, potentially revolutionizing fields where coordinated decision-making is crucial.
+In this work, we present a new challenge for LLMs as human assistants to control up to two thousand units in a strategy game. We propose a new framework, HIVE, to allow a player to give high-level commands that an LLM translates into a long-term plan that controls the behavior of each unit. We showed that generalist LLMs such as Claude Sonnet and GPT-4o can handle such tasks but are still sensitive to slight changes in the player's prompts. Complimentary experiments showed that HIVE requires human help to get the best performance and that generalist LLMs' visual capacity to use an out-of-distribution map for terrain and landmark locations is still to be improved. This work opens many interesting avenues for improving LLMs' capacities to collaborate with humans, such as improving their map-reading abilities, reducing their sensitivity to prompts, and increasing their long-term planning.
 
 ## BibTeX
 
